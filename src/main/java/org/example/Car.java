@@ -10,6 +10,17 @@ public class Car {
     private boolean seatBelt;
     private boolean airbag;
 
+    //CONSTRUCTOR
+    public Car() {
+    }
+
+    public Car(int numberOfTires, int numberOfDoors, boolean seatBelt, boolean airbag) {
+        this.numberOfTires = numberOfTires;
+        this.numberOfDoors = numberOfDoors;
+        this.seatBelt = seatBelt;
+        this.airbag = airbag;
+    }
+
     //GETTER&SETTER
 
     public int getNumberOfTires() {
