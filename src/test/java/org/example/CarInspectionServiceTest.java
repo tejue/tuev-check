@@ -8,55 +8,58 @@ class CarInspectionServiceTest {
 
     //TESTING FOR 4 WHEELS
     @Test
-    void checkWheels_whenWheelsIs4_thenReturnTrue() {
+    void checkFor4Tires_whenTiresIs4_thenReturnTrue() {
         //GIVEN
-        int amountOfWheels = 4;
-        boolean expected = true;
+        int numberOfTires = 4;
+        Car car = new Car(numberOfTires, 0, false, false);
         //WHEN
-        boolean actual = CarInspectionService.checkWheels(amountOfWheels);
+        boolean actual = CarInspectionService.checkForTires(car);
         //THEN
-        assertEquals(expected, actual);
+        assertTrue(actual);
     }
 
     @Test
-    void checkWheels_whenWheelsIs0_thenReturnFalse() {
+    void checkFor4Tires_whenTiresIs3_thenReturnFalse() {
         //GIVEN
-        int amountOfWheels = 0;
+        int numberOfTires = 3;
+        Car car = new Car(numberOfTires, 0, false, false);
         //WHEN
-        boolean actual = CarInspectionService.checkWheels(amountOfWheels);
+        boolean actual = CarInspectionService.checkForTires(car);
         //THEN
         assertFalse(actual);
     }
 
     @Test
-    void checkWheels_whenWheelsIs2_thenReturnFalse() {
+    void checkFor4Tires_whenTiresIs0_thenReturnFalse() {
         //GIVEN
-        int amountOfWheels = 2;
+        int numberOfTires = 0;
+        Car car = new Car(numberOfTires, 0, false, false);
         //WHEN
-        boolean actual = CarInspectionService.checkWheels(amountOfWheels);
+        boolean actual = CarInspectionService.checkForTires(car);
         //THEN
         assertFalse(actual);
     }
 
     @Test
-    void checkWheels_whenWheelsIs5_thenReturnFalse() {
+    void checkFor4Tires_whenTiresIs5_thenReturnFalse() {
         //GIVEN
-        int amountOfWheels = 5;
+        int numberOfTires = 5;
+        Car car = new Car(numberOfTires, 0, false, false);
         //WHEN
-        boolean actual = CarInspectionService.checkWheels(amountOfWheels);
+        boolean actual = CarInspectionService.checkForTires(car);
         //THEN
         assertFalse(actual);
     }
 
     @Test
-    void checkWheels_whenWheelsIsMinus4_thenReturnFalse() {
+    void checkFor4Tires_whenTiresIsMinus4_thenReturnFalse() {
         //GIVEN
-        int amountOfWheels = -4;
+        int numberOfTires = -4;
+        Car car = new Car(numberOfTires, 0, false, false);
         //WHEN
-        boolean actual = CarInspectionService.checkWheels(amountOfWheels);
+        boolean actual = CarInspectionService.checkForTires(car);
         //THEN
         assertFalse(actual);
     }
 
-    //
 }

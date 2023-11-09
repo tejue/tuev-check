@@ -1,7 +1,8 @@
 package org.example;
 
 public class CarInspectionService {
-    public static boolean checkWheels(int amountOfWheels) {
-        return amountOfWheels == 4;
+    public static boolean checkForTires(Car car) {
+        return car.getNumberOfTires() == 4;
     }
+
 }
