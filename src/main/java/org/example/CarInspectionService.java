@@ -5,4 +5,7 @@ public class CarInspectionService {
         return car.getNumberOfTires() == 4;
     }
 
+    public static boolean checkForSeatbelt(Car car) {
+        return car.isSeatBelt();
+    }
 }

@@ -62,4 +62,26 @@ class CarInspectionServiceTest {
         assertFalse(actual);
     }
 
+    @Test
+    void checkForSeatbelt_whenCarHasSeatbelt_thenReturnTrue() {
+        //GIVEN
+        boolean hasSeatbelt = true;
+        Car car = new Car(0, 0, hasSeatbelt, false);
+        //WHEN
+        boolean actual = CarInspectionService.checkForSeatbelt(car);
+        //THEN
+        assertTrue(actual);
+    }
+
+    @Test
+    void checkForSeatbelt_whenCarHasNoSeatbelt_thenReturnFalse() {
+        //GIVEN
+        boolean hasSeatbelt = false;
+        Car car = new Car(0, 0, hasSeatbelt, false);
+        //WHEN
+        boolean actual = CarInspectionService.checkForSeatbelt(car);
+        //THEN
+        assertFalse(actual);
+    }
+
 }
