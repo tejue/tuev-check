@@ -16,4 +16,11 @@ public class CarInspectionService {
     public static boolean checkForDoors(Car car) {
         return car.getNumberOfDoors() == 3 || car.getNumberOfDoors() == 5;
     }
+
+    public static boolean checkCar(Car car) {
+        return checkForTires(car)
+                && checkForSeatbelt(car)
+                && checkForAirbag(car)
+                && checkForDoors(car);
+    }
 }
