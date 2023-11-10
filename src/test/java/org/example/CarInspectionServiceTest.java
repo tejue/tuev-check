@@ -62,6 +62,7 @@ class CarInspectionServiceTest {
         assertFalse(actual);
     }
 
+    //TESTING FOR SEATBELT
     @Test
     void checkForSeatbelt_whenCarHasSeatbelt_thenReturnTrue() {
         //GIVEN
@@ -84,4 +85,71 @@ class CarInspectionServiceTest {
         assertFalse(actual);
     }
 
+    //TESTING FOR AIRBAG
+    @Test
+    void checkForAirbag_whenCarHasAirbag_thenReturnTrue() {
+        //GIVEN
+        boolean hasAirbag = true;
+        Car car = new Car(0, 0, false, hasAirbag);
+        //WHEN
+        boolean actual = CarInspectionService.checkForAirbag(car);
+        //THEN
+        assertTrue(actual);
+    }
+
+    @Test
+    void checkForAirbag_whenCarHasNoAirbag_thenReturnFalse() {
+        //GIVEN
+        boolean hasAirbag = false;
+        Car car = new Car(0, 0, false, hasAirbag);
+        //WHEN
+        boolean actual = CarInspectionService.checkForAirbag(car);
+        //THEN
+        assertFalse(actual);
+    }
+
+    //TESTING FOR 3 OR 5 DOORS
+    @Test
+    void checkForNumberOfDoors_whenCarHas3Doors_thenReturnTrue() {
+        //GIVEN
+        int numberOfDoors = 3;
+        Car car = new Car(0, numberOfDoors, false, false);
+        //WHEN
+        boolean actual = CarInspectionService.checkForDoors(car);
+        //THEN
+        assertTrue(actual);
+    }
+
+    @Test
+    void checkForNumberOfDoors_whenCarHas5Doors_thenReturnTrue() {
+        //GIVEN
+        int numberOfDoors = 5;
+        Car car = new Car(0, numberOfDoors, false, false);
+        //WHEN
+        boolean actual = CarInspectionService.checkForDoors(car);
+        //THEN
+        assertTrue(actual);
+    }
+
+    @Test
+    void checkForNumberOfDoors_whenCarHas0Doors_thenReturnFalse() {
+        //GIVEN
+        int numberOfDoors = 0;
+        Car car = new Car(0, numberOfDoors, false, false);
+        //WHEN
+        boolean actual = CarInspectionService.checkForDoors(car);
+        //THEN
+        assertFalse(actual);
+    }
+
+    @Test
+    void checkForNumberOfDoors_whenCarHas4Doors_thenReturnFalse() {
+        //GIVEN
+        int numberOfDoors = 4;
+        Car car = new Car(0, numberOfDoors, false, false);
+        //WHEN
+        boolean actual = CarInspectionService.checkForDoors(car);
+        //THEN
+        assertFalse(actual);
+    }
 }
